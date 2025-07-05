@@ -1,0 +1,11 @@
+[project]
+name = "openrpc-practice"
+version = "0.1.0"
+description = "Playground for generating OpenRPC specs"
+requires-python = ">=3.11"
+
+[project.dependencies]
+pydantic = {extras = ["email"], version = "^2.7"}
+
+[tool.pydantic-mypy]
+init_typed = true

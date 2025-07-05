@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Editors
+.idea/
+.vscode/
+
+# Output
+openrpc.json

@@ -1,7 +1,13 @@
-from pydantic import constr
+from typing import ClassVar
 
-# Re-usable regex-validated scalars
-Address = constr(pattern=r'^0x[0-9a-fA-F]{40}$')
-Quantity = constr(pattern=r'^0x(0|[1-9a-fA-F][0-9a-fA-F]*)$')
-DataHex  = constr(pattern=r'^0x([0-9a-fA-F]{2})*$')
-    
+class _EthereumType:
+    pattern: ClassVar[str]
+
+class Address(_EthereumType):
+    pattern = r"^0x[0-9a-fA-F]{40}$"
+
+class Quantity(_EthereumType):
+    pattern = r"^0x(0|[1-9a-fA-F][0-9a-fA-F]*)$"
+
+class DataHex(_EthereumType):
+    pattern = r"^0x([0-9a-fA-F]{2})*$"
